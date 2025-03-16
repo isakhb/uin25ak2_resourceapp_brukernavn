@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import "../styles/style.css";
 
 export default function Layout() {
     return (

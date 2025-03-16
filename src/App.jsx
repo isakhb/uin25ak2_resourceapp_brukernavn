@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+//Gjemmer standard-styling, slik at min css/styling kommer fram. Samme i main.jsx.
+//import './App.css' (Fjerner React sin start-css/styling)
+
+//Importerer style-filen
+import "./styles/style.css"
+
+//Importerer komponenten Layout
 import Layout from './components/Layout'
 
 function App() {

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --darkblue: #2A324B;
+    --blue: #58699D;
+    --lightblue: #E1E5EE;
+    --white: #fff;
+    --montserrat: "Montserrat", serif;
+    --rubik: "Rubik", serif;
+}
+
+body {
+    background-color: var(--lightblue);
+    font-size: 1rem;
+    font-family: var(--montserrat);
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav, main {
+    margin: 0 100px 0 100px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 100%;
+
+    button {
+        background-color: var(--darkblue);
+        color: var(--white);
+        border-style: none;
+        padding: 25px 50px 25px 50px;
+        font-weight: 750;
+        font-size: 1rem;
+    }
+    button:hover {
+        background-color: var(--white);
+        color: var(--darkblue);
+    }
+}
+
+main {
+    background-color: var(--white);
+    padding: 50px;
+    
+    h1 {
+        color: var(--darkblue);
+    }
+}
