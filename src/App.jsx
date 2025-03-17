@@ -6,6 +6,7 @@ import viteLogo from '/vite.svg'
 
 //Importerer style-filen
 import "./styles/style.css"
+import "./assets/ressurser.js"
 
 //Importerer komponenten Layout
 import Layout from './components/Layout'

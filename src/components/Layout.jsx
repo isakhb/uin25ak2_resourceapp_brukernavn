@@ -1,5 +1,5 @@
-import Nav from "./Nav";
-import "../styles/style.css";
+import Nav from "./Nav"
+import Resources from "./Resources"
 
 export default function Layout() {
     return (
@@ -10,10 +10,11 @@ export default function Layout() {
                 </header>
             
                 <main>
-                    <section id="IDresources">
-                    </section>
+                    <Resources />
                 </main>
             </body>
+
+
         </>
     )
 }
