@@ -6,17 +6,27 @@ import viteLogo from '/vite.svg'
 
 //Importerer style-filen
 import "./styles/style.css"
-import "./assets/ressurser.js"
+import resources from "./assets/ressurser.js"
+
+// Debugging
+console.log("Loaded Resources:", resources)
+
 
 //Importerer komponenten Layout
 import Layout from './components/Layout'
 
+//Navn på knappene
+const categories = ["HTML", "CSS", "JavaScript", "React", "Headless-CMS"]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState("HTML")
+
+  // Debugging
+  console.log("Valgt kategori:", selectedCategory)
 
   return (
-    <Layout>
-    </Layout>
+    <Layout setSelectedCategory={setSelectedCategory} categories={categories}
+    selectedCategory={selectedCategory} resources={resources}/>
   )
 }
 

@@ -1,29 +1,36 @@
-export default function Resources() {
+import PageTitle from "./PageTitle"
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const resourceContainer = document.getElementById("IDresources");
-        const buttons = document.querySelectorAll("button");
-    
-        function printResources(category) {
-            const filteredResources = resources.filter(res => res.category === category);
-            resourceContainer.innerHTML = filteredResources.map(res =>
-                `<h1>${res.category}</h1>
-                <p>${res.text}</p>
-                <ul>
-                    ${res.sources.map(src =>
-                        `<li><a href="${src.url}">${src.title}</a></li>`
-                    ).join('')}
-                </ul>`
-            ).join('');
-        }
-    
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                printResources(button.innerText);
-            });
-        });
-    
-        printResources("HTML");
-    });
-    
+export default function Resources({ selectedCategory, resources = [] }) {
+  console.log("Current Category:", selectedCategory)
+  console.log("Resources Array:", resources)
+
+  // Normaliserer kategorinavna slik at de matcher med knappene
+  const normalize = (str) => str.trim().toLowerCase().replace(/\s+/g, "-")
+
+  // Filter ressurser basert på kategori
+  const filteredResources = resources.filter(res => 
+    normalize(res.category) === normalize(selectedCategory)
+  )
+
+  console.log("Filtered Resources:", filteredResources)
+
+  return (
+    <section>
+      {filteredResources.length > 0 ? (
+        <>
+          <PageTitle text={selectedCategory} />
+          <ul>
+            {filteredResources.map(res => (
+              <li key={res.title}>
+                <a href={res.url}>{res.title}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        //Printer ut dette hvis ingen ressurser ble funnet
+        <p>Ingen ressurser funnet for {selectedCategory}</p>
+      )}
+    </section>
+  )
 }

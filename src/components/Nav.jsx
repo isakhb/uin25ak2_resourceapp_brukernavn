@@ -1,11 +1,18 @@
-export default function Nav() {
-    return(
-        <nav>
-            <button id="btnHTML">HTML</button>
-            <button id="btnCSS">CSS</button>
-            <button id="btnJS">JavaScript</button>
-            <button id="btnReact">React</button>
-            <button id="btnSHCMS">Sanity and headless CMS</button>
-        </nav>
-    )
+export default function Nav({ setSelectedCategory, categories }) {
+  return (
+    <nav>
+      {categories.map(category => (
+        <button 
+          key={category} 
+          onClick={() => {
+            // Debugging
+            console.log("Knapp trykket på:", category)
+            setSelectedCategory(category)
+          }}
+        >
+          {category}
+        </button>
+      ))}
+    </nav>
+  )
 }
